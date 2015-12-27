@@ -22,7 +22,7 @@ We perform **all** the needed steps above, **though not in the order given**. Th
 
 ---
 
-#### Code Snippets Explained
+#### Code Snippets of run_analysis.R Explained
 
 * **Do Step 0 Go to the directory containing the data**
 ```
