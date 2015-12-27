@@ -24,7 +24,7 @@ We perform **all** the needed steps above, **though not in the order given**. Th
 
 #### Code Snippets Explained
 
-* Do Step 0 Go to the directory containing the data
+* **Do Step 0 Go to the directory containing the data**
 ```
 getwd()
 setwd("./UCI HAR Dataset")
