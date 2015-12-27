@@ -2,6 +2,8 @@
 ---
 ###Variables
 ---
+* feature_list1 : captures the names of the 561 measurement variables, which are given in the file `features.txt`
+
 * ***activity_labels*** : the mapping from Activity-Id to an Activity-Label. The label is a descriptive text. E.g. `1` corresponds to `walking`, `4` corresponds to `sitting` etc. The mapping data for all the 6 activities is provided in the `activity_labels.txt` file.  
 
 * ***x_test*** : Test measurement data (561 columns), 1 row per observation.
