@@ -83,11 +83,19 @@ data_step2      <- data_step1[, colsInterestedx]
 
 This was done using merge(). Then we use order() to restore the order of the data set which was scrambled by the merge().
 We should not include the rowId column after re-ordering.
-We write the tidy data to the file tidyData.txt. Remember to set row.name=FALSE
+We write the tidy data to the file tidyData.txt; remembering to set row.name=FALSE
 ```
 m <- merge(data_step2, activity_labels, by.x = "Activity_Id", by.y = "Activity_Id")
 merge_data_step3 <- m[order(m$rowID), -c(1, 69)]        # retain original order of tuples, remove rowID column
 m2 <- merge_data_step3[, c(1, 68, 2:67)]                # re-order columns
 
 write.table(m2, file = "./tidyData.txt", row.name=FALSE)
+```
+
+* **Do Step 5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
+We use the aggregate() command. 
+We write the tidy data to the file tidyDataGroupAggregate.txt; remembering to set row.name=FALSE
+```
+meanV <- aggregate(m2[, 3:68], list(Subject_Id = m2$Subject_Id, Activity_Label = m2$Activity_Label), mean)
+write.table(meanV, file = "./tidyDataGroupAggregate.txt", row.name=FALSE)
 ```
