@@ -26,15 +26,19 @@
 * ***m2*** : output of step #3. At this stage, descriptive activity names replace the activity ids in the data set data_step2.
 
 *  ***merge_data_step3*** is used as an intermediate to m2, before re-ordering the rows which were scrambled by the merge() operation. Also, we discard the rowId column.
+
 ---
 ###Transformation
 
-Step #1: 
+* ***Step #1:*** 
 ![alt text](https://github.com/RahulNPupala/Getting_And_Cleaning_Data/blob/master/step1.jpg "Step #1 Data Transformation")
 
-Step #2:
+* ***Step #2:***
+
 data_step2      <- data_step1[, colsInterestedx]
 
-Step #3:
+* ***Step #3:***
+
 m2 <- merge_data_step3[, c(1, 68, 2:67)]
+
 ---
