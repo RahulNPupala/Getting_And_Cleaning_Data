@@ -25,9 +25,11 @@
 
 * ***data_step2*** : output of transformation step #2. At this point, we have selected only the columns of interest (mean and std of measurement variables). The colsInterestedx variable identifies these columns for us.
 
-* ***m2*** : output of step #3. At this stage, descriptive activity names replace the activity ids in the data set data_step2.
+* ***m*** : descriptive activity names replace the activity ids of variable data_step2.
 
 *  ***merge_data_step3*** is used as an intermediate to m2, before re-ordering the rows which were scrambled by the merge() operation. Also, we discard the rowId column.
+
+* ***m2*** : output of step #3. At this stage, descriptive activity names replace the activity ids in the data set data_step2.
 
 ---
 ###Transformations
@@ -45,11 +47,11 @@ data_step2      <- data_step1[, colsInterestedx]
 
 * ***Step #3:***
 
-m2 <- merge_data_step3[, c(1, 68, 2:67)]
+data_step2 ---> m ---> merge_data_step3 ---> m2
 
 * ***Step #5:***
 
-m2 ---> Step 5 ---> meanV
+m2 ---> meanV
 
 The variable meanV is a bit of a misnomer, since it contains mean and std columns of the measurement variables.
 
