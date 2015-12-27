@@ -52,4 +52,12 @@ colnames(x_train)       <- feature_list1                        # Add descriptiv
 colnames(y_train)       <- c("Activity_Id")                     # Add descriptive column names
 colnames(subject_train) <- c("Subject_Id")                      # Add descriptive column names
 ```
- 
+
+* Do Step 1 Merge the training and the test sets to create one data set. Use cbind(), rbind(). Add a row Id column (rightmost) to rescue row scrambling by merge()
+```
+data_test   <- cbind(subject_test,  y_test,  x_test)    # <Subject Id, Activity Id, <561-variables>>
+data_train  <- cbind(subject_train, y_train, x_train)
+
+data_step1  <- rbind(data_test, data_train)             # merge the rows of train and test data
+data_step1$rowID <- 1:nrow(data_step1)                  # Add a row Id column to rescue row scrambling by merge()
+```
