@@ -62,7 +62,8 @@ data_step1  <- rbind(data_test, data_train)             # merge the rows of trai
 data_step1$rowID <- 1:nrow(data_step1)                  # Add a row Id column to rescue row scrambling by merge()
 ```
 
-* Do Step 2 Extract only the measurements on the mean and standard deviation for each measurement. Inspecting the data dictionary contained in feature.txt, we realize that this amounts to extracting the following columns from the 561-variable sets. We add an offset of 2, to account for the Subject Id and Activity Id columns inserted on the left of this 561-variable set.
+* Do Step 2 Extract only the measurements on the mean and standard deviation for each measurement. 
+* Inspecting the data dictionary contained in feature.txt, we realize that this amounts to extracting the following columns from the 561-variable sets. We add an offset of 2, to account for the Subject Id and Activity Id columns inserted on the left of this 561-variable set.
 ```
 colsInterested1 <- c(1:6, 41:46, 81:86, 121:126, 161:166)
 colsInterested2 <- c(201, 202, 214, 215, 227, 228, 240, 241, 253, 254)
