@@ -8,7 +8,7 @@
 
 * ***y_test*** : Activity Labels for the Test data, 1 row per observation; same number of rows as x_test.
 
-* ***subject_test*** : Subject Id for the Test data, 1 row per observation; same number of rows as x_test.
+* ***subject_test*** : Subject Id for the Test data, 1 row per observation; same number of rows as x_test. Subject Id is a number. A mapping to a name is not provided to maintain anonymity.
 
 * ***x_train, y_train, subject_train*** : variables corresonding to the training data, similar to the test data set above. 
 
