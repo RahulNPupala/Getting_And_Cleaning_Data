@@ -31,6 +31,8 @@ setwd("./UCI HAR Dataset")
 ```
 
 * Do Step 4 Appropriately labels the data set with descriptive variable names. the colnames() function has been used below to label variables. E.g.
-`feature_list  <- read.table("./features.txt", stringsAsFactors=FALSE)
- feature_list1 <- feature_list[, 2]`
+```
+feature_list  <- read.table("./features.txt", stringsAsFactors=FALSE)
+feature_list1 <- feature_list[, 2]
+```
  
