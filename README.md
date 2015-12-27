@@ -78,3 +78,16 @@ colsInterestedx <- c(1, 2, colsInterested, 564)         # include the Subject Id
 
 data_step2      <- data_step1[, colsInterestedx]
 ```
+
+* ** Do Step 3 Use descriptive activity names to name the activities in the data set** 
+
+This was done using merge(). Then we use order() to restore the order of the data set which was scrambled by the merge().
+We should not include the rowId column after re-ordering.
+We write the tidy data to the file tidyData.txt. Remember to set row.name=FALSE
+```
+m <- merge(data_step2, activity_labels, by.x = "Activity_Id", by.y = "Activity_Id")
+merge_data_step3 <- m[order(m$rowID), -c(1, 69)]        # retain original order of tuples, remove rowID column
+m2 <- merge_data_step3[, c(1, 68, 2:67)]                # re-order columns
+
+write.table(m2, file = "./tidyData.txt", row.name=FALSE)
+```
