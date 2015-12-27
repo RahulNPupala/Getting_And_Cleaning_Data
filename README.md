@@ -30,7 +30,7 @@ getwd()
 setwd("./UCI HAR Dataset")
 ```
 
-* Do Step 4 Appropriately labels the data set with descriptive variable names. the colnames() function has been used below to label variables. E.g.
+* **Do Step 4 Appropriately labels the data set with descriptive variable names. the colnames() function has been used below to label variables. E.g.**
 ```
 feature_list  <- read.table("./features.txt", stringsAsFactors=FALSE)
 feature_list1 <- feature_list[, 2]
@@ -53,7 +53,7 @@ colnames(y_train)       <- c("Activity_Id")                     # Add descriptiv
 colnames(subject_train) <- c("Subject_Id")                      # Add descriptive column names
 ```
 
-* Do Step 1 Merge the training and the test sets to create one data set. Use cbind(), rbind(). Add a row Id column (rightmost) to rescue row scrambling by merge()
+* **Do Step 1 Merge the training and the test sets to create one data set. Use cbind(), rbind(). Add a row Id column (rightmost) to rescue row scrambling by merge()**
 ```
 data_test   <- cbind(subject_test,  y_test,  x_test)    # <Subject Id, Activity Id, <561-variables>>
 data_train  <- cbind(subject_train, y_train, x_train)
@@ -62,7 +62,7 @@ data_step1  <- rbind(data_test, data_train)             # merge the rows of trai
 data_step1$rowID <- 1:nrow(data_step1)                  # Add a row Id column to rescue row scrambling by merge()
 ```
 
-* Do Step 2 Extract only the measurements on the mean and standard deviation for each measurement. 
+* **Do Step 2 Extract only the measurements on the mean and standard deviation for each measurement.** 
 
 Inspecting the data dictionary contained in feature.txt, we realize that this amounts to extracting the following columns from the 561-variable sets. We add an offset of 2, to account for the Subject Id and Activity Id columns inserted on the left of this 561-variable set.
 ```
