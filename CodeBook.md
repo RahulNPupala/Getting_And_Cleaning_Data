@@ -30,7 +30,11 @@
 *  ***merge_data_step3*** is used as an intermediate to m2, before re-ordering the rows which were scrambled by the merge() operation. Also, we discard the rowId column.
 
 ---
-###Transformation
+###Transformations
+
+* ***Step #4:*** 
+
+Appropriately labels the data set with descriptive variable names. This step was performed first as a matter of programming convenience. No new variables were created. The variable names were descriptively added to the original names i.e. feature_list1, activity_labels, x_test, y_test, subject_test, x_train, y_train, subject_train
 
 * ***Step #1:*** 
 ![alt text](https://github.com/RahulNPupala/Getting_And_Cleaning_Data/blob/master/step1.jpg "Step #1 Data Transformation")
