@@ -34,5 +34,22 @@ setwd("./UCI HAR Dataset")
 ```
 feature_list  <- read.table("./features.txt", stringsAsFactors=FALSE)
 feature_list1 <- feature_list[, 2]
+
+activity_labels         <- read.table("./activity_labels.txt")
+colnames(activity_labels) <- c("Activity_Id", "Activity_Label") # Add descriptive column names
+
+x_test                  <- read.table("./test/X_test.txt")
+y_test                  <- read.table("./test/y_test.txt")
+subject_test            <- read.table("./test/subject_test.txt")
+colnames(x_test)        <- feature_list1                        # Add descriptive column names
+colnames(y_test)        <- c("Activity_Id")                     # Add descriptive column names
+colnames(subject_test)  <- c("Subject_Id")                      # Add descriptive column names
+
+x_train                 <- read.table("./train/X_train.txt")
+y_train                 <- read.table("./train/y_train.txt")
+subject_train           <- read.table("./train/subject_train.txt")
+colnames(x_train)       <- feature_list1                        # Add descriptive column names
+colnames(y_train)       <- c("Activity_Id")                     # Add descriptive column names
+colnames(subject_train) <- c("Subject_Id")                      # Add descriptive column names
 ```
  
