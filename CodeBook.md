@@ -17,4 +17,6 @@
 ---
 ###Transformation
 ---
+Step #1: 
+![alt text](https://github.com/RahulNPupala/Getting_And_Cleaning_Data/step1.jpg "Step #1 Data Transformation")
 ---
