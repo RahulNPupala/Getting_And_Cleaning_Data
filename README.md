@@ -79,7 +79,7 @@ colsInterestedx <- c(1, 2, colsInterested, 564)         # include the Subject Id
 data_step2      <- data_step1[, colsInterestedx]
 ```
 
-* ** Do Step 3 Use descriptive activity names to name the activities in the data set** 
+* **Do Step 3 Use descriptive activity names to name the activities in the data set** 
 
 This was done using merge(). Then we use order() to restore the order of the data set which was scrambled by the merge().
 We should not include the rowId column after re-ordering.
