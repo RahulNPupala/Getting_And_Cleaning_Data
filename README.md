@@ -30,7 +30,9 @@ getwd()
 setwd("./UCI HAR Dataset")
 ```
 
-* **Do Step 4 Appropriately labels the data set with descriptive variable names. the colnames() function has been used below to label variables. E.g.**
+* **Do Step 4 Appropriately labels the data set with descriptive variable names.** 
+
+The colnames() function has been used below to label variables. E.g.
 ```
 feature_list  <- read.table("./features.txt", stringsAsFactors=FALSE)
 feature_list1 <- feature_list[, 2]
@@ -53,7 +55,9 @@ colnames(y_train)       <- c("Activity_Id")                     # Add descriptiv
 colnames(subject_train) <- c("Subject_Id")                      # Add descriptive column names
 ```
 
-* **Do Step 1 Merge the training and the test sets to create one data set. Use cbind(), rbind(). Add a row Id column (rightmost) to rescue row scrambling by merge()**
+* **Do Step 1 Merge the training and the test sets to create one data set.** 
+
+Use cbind(), rbind(). Add a row Id column (rightmost) to rescue row scrambling by merge()
 ```
 data_test   <- cbind(subject_test,  y_test,  x_test)    # <Subject Id, Activity Id, <561-variables>>
 data_train  <- cbind(subject_train, y_train, x_train)
@@ -82,9 +86,7 @@ data_step2      <- data_step1[, colsInterestedx]
 * **Do Step 3 Use descriptive activity names to name the activities in the data set** 
 
 This was done using merge(). Then we use order() to restore the order of the data set which was scrambled by the merge().
-
 We should not include the rowId column after re-ordering.
-
 We write the tidy data to the file tidyData.txt; remembering to set row.name=FALSE
 ```
 m <- merge(data_step2, activity_labels, by.x = "Activity_Id", by.y = "Activity_Id")
