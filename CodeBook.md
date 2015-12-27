@@ -14,6 +14,8 @@
 
 * ***x_train, y_train, subject_train*** : variables corresonding to the training data, similar to the test data set above. 
 
+* ***meanV*** : final output of the data analysis, which  creates the second, independent tidy data set with the average of each variable for each activity and each subject.
+
 ---
 ###Temporary (Programming) Variables
 
@@ -40,5 +42,11 @@ data_step2      <- data_step1[, colsInterestedx]
 * ***Step #3:***
 
 m2 <- merge_data_step3[, c(1, 68, 2:67)]
+
+* ***Step #5:***
+
+m2 ---> Step 5 ---> meanV
+
+The variable meanV is a bit of a misnomer, since it contains mean and std columns of the measurement variables.
 
 ---
