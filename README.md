@@ -82,7 +82,9 @@ data_step2      <- data_step1[, colsInterestedx]
 * **Do Step 3 Use descriptive activity names to name the activities in the data set** 
 
 This was done using merge(). Then we use order() to restore the order of the data set which was scrambled by the merge().
+
 We should not include the rowId column after re-ordering.
+
 We write the tidy data to the file tidyData.txt; remembering to set row.name=FALSE
 ```
 m <- merge(data_step2, activity_labels, by.x = "Activity_Id", by.y = "Activity_Id")
@@ -93,6 +95,7 @@ write.table(m2, file = "./tidyData.txt", row.name=FALSE)
 ```
 
 * **Do Step 5 From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
+
 We use the aggregate() command. 
 We write the tidy data to the file tidyDataGroupAggregate.txt; remembering to set row.name=FALSE
 ```
