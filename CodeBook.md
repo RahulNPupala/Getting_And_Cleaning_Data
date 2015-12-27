@@ -15,8 +15,19 @@
 * ***x_train, y_train, subject_train*** : variables corresonding to the training data, similar to the test data set above. 
 
 ---
+###Temporary (Programming) Variables
+
+* ***colsInterestedx*** : since we want only certain columns (mean and std of measurement variables)
+
+* ***data_step1*** : output of transformation step #1
+
+* ***data_step2*** : output of transformation step #2. At this point, we have selected only the columns of interest (mean and std of measurement variables). The colsInterestedx variable identifies these columns for us.
+
+---
 ###Transformation
 ---
 Step #1: 
 ![alt text](https://github.com/RahulNPupala/Getting_And_Cleaning_Data/blob/master/step1.jpg "Step #1 Data Transformation")
----
+
+Step #2:
+data_step2      <- data_step1[, colsInterestedx]
